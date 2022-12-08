@@ -5,7 +5,6 @@ from imagekitio.models.UploadFileRequestOptions import UploadFileRequestOptions
 
 imagekit = ImageKit(
 
-    private_key='private_p6Y0CqbKdDeoYky/nnZKzSMCj50=',
 
     public_key='public_4vbj3t6ruv2p7z5SxBc0pyvC9Dg=',
 
