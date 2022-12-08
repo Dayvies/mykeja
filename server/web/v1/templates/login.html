@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/header.css') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/login.js') }}"></script>
+        <link rel="icon" href="../static/images/logo.png" />
+        <link rel="icon" href="/static/images/logo.png" />
+    </HEAD>
+    <BODY>
+        <header>
+                <div class="logo">
+                </div><div class="search"></div>
+                <div class="options"><div class ="inf"><p>Sign up</p></div><div class="icons"><div class ="navbutton"></div><div class ="navuser"></div></div> </div>
+        </header>
+        <div class="nav">
+                
+                        <p class ="signup">Sign up</p><p>About</p><p>Help</p>
+                
+        </div>
+        <form id="loginform" >
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required placeholder = "email">
+                </br>
+
+                <label for="password">password</label>
+                <input type="text" id="password" name="password" placeholder="password" required>
+                
+                </br>
+                <input type="submit" id="submitbtn" value="Submit" class="btn btn-primary">
+                
+        </form>
+        <h4 id="message">Welcome User, please login</h4>
+    </BODY>
+</HTML>

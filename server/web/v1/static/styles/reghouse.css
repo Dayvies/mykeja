@@ -1,0 +1,59 @@
+body {
+        margin: 0;
+        padding: 0;
+}
+.column {
+        width: 170px;;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 150px;
+        
+        display: flex;
+}
+.column .image{
+        overflow: hidden;
+        cursor: pointer;
+        width: 100%
+}
+.column image:hover {
+        opacity: 1;
+}
+.row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        clear:both;
+        justify-content: space-evenly;
+}
+.del
+{
+        height:16px;
+        position: absolute;
+        float:right;
+        margin-top: 5px;
+        padding-left: 150px;
+        opacity: 30%;
+        margin-right: 50px;
+        cursor: pointer;
+}
+.del:hover{
+        opacity: 100%;
+}
+#reghouse{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-evenly;
+}
+.formdetails{
+        width: 40%;
+        display: flex;
+        margin-left: 10px;
+        justify-content: space-evenly;
+}
+.form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        min-width: 300px;
+}

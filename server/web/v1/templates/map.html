@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/header.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/maps.css') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/map.js') }}"></script>
+        <link rel="icon" href="/static/images/logo.png" />
+    </HEAD>
+    <BODY>
+        <header>
+                <div class="logo">
+                </div><div class="search"></div>
+                <div class="options"><div class ="inf"><p>Sign in</p></div><div class="icons"><div class ="navbutton"></div><div class ="navuser"></div></div> </div>
+        </header>
+        <div class="nav">
+                
+                        <p class ="signin">Sign in</p><p>Login</p><p>About</p><p>Help</p>
+                
+        </div>
+        <div class="pac-card" id="pac-card
+                <div>
+                  <div id="title">Autocomplete search</div>
+                </div>
+                <div id="pac-container">
+                  <input id="pac-input" type="text" placeholder="Enter a location" />
+                </div>
+              </div>
+              <div id="map"></div>
+              <div id="infowindow-content">
+                <span id="place-name" class="title"></span><br />
+                <span id="place-address"></span>
+              </div>
+          
+              <!-- 
+               The `defer` attribute causes the callback to execute after the full HTML
+               document has been parsed. For non-blocking uses, avoiding race conditions,
+               and consistent behavior across browsers, consider loading using Promises
+               with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+              -->
+              <script
+                src="https://maps.googleapis.com/maps/api/js?key={{ gapi }}&callback=initMap&libraries=places&v=weekly"
+                defer
+              ></script>
+            </body>
+
+    </BODY>
+</HTML>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/edit_house_body.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/header.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/maps2.css') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/edit_house.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/map2.js') }}"></script>
+        <link rel="icon" href="/static/images/logo.png" />
+    </HEAD>
+    <BODY>
+        <header>
+                <div class="logo">
+                </div><div class="search"></div>
+                <div class="options"><div class ="inf"><p>Sign in</p></div><div class="icons"><div class ="navbutton"></div><div class ="navuser"></div></div> </div>
+        </header>
+        <div class="nav">
+                
+                        <p class ="signin">Sign in</p><p>Login</p><p>About</p><p>Help</p>
+                
+        </div>
+        <p id="identifier" data-id="{{ house.id }}">Change House Details</p>
+        <div id="reghouse">
+        <div class="formdetails">
+        <form id="houseform" >
+                <label for="name">Name</label>
+                </br>
+                <input type="text" id="name" name="name" required value="{{ house.name }}"">
+                </br>
+                <label for="number_rooms">Number of rooms</label>
+                </br>
+                <input type="number" id="number_rooms" name="number_rooms" value="{{ house.number_rooms }}" required>
+                </br>
+                <label for="price">Price KSH</label>
+                </br>
+                <input type="number" id="price" name="price" value="{{ house.price }}" required>
+                </br>
+                <label for="number_bathrooms">Bathrooms</label>
+                </br>
+                <input type="number" id="number_bathrooms" name="number_bathrooms" value="{{ house.number_bathrooms}}" required>
+                </br>
+                <label for="location">Location</label>
+                </br>
+                <input type="text" id="pac-input" name="location" value="{{ house.location }}" >
+                </br>
+                <label for="latitude">Lattitude</label>
+                </br>
+                <input type="number" id="latitude" name="latitude" value="{{ house.latitude}}" readonly>
+                </br>
+                <label for="longitude">Longitude</label>
+                </br>
+                <input type="number" id="longitude" name="longitude" value="{{ house.longitude}}" readonly>
+                </br>
+                <label for="description">Description</label>
+                </br>
+                <textarea  id="description" name="description" rows="4" cols="50" required>{{ house.description }}</textarea>
+                </br>
+                <input type="submit" id="submitbtn" value="Submit" class="btn btn-primary">
+                
+        </form>
+        </div>
+        <div id ="mapdetails">
+                <div id="map">THIS IS A MAP</div>
+                <div id="infowindow-content">
+                  <span id="place-name" class="title"></span><br />
+                  <span id="place-address"></span>
+                </div>
+        </div>
+        </div>
+        <div class ="row">
+        {% for img in house.urls %}
+        <div class ="column" id="{{ img[1] }}">
+            <img src="{{ img[0]|e }}" alt="house image"  class="image">   
+            <img src="/static/images/x-mark.png" alt="delete"  class="del">
+        </div>
+        {% endfor %}
+        </div>
+        <div id="image_upload">
+                <h2>Select Images of your house to upload</h2>
+                <dl>
+                        <p>
+                                <p id="msg"></p>
+                                <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
+                                <button id="upload">Upload</button>
+                                <button id="reset">Cancel Changes</button>
+                        </p>
+                </dl>
+                </div>
+               
+                    
+                        <!-- 
+                         The `defer` attribute causes the callback to execute after the full HTML
+                         document has been parsed. For non-blocking uses, avoiding race conditions,
+                         and consistent behavior across browsers, consider loading using Promises
+                         with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+                        -->
+                        <script
+                          src="https://maps.googleapis.com/maps/api/js?key={{ gapi }}&callback=initMap&libraries=places&v=weekly"
+                          defer
+                        ></script>
+                  
+    </BODY>
+</HTML>

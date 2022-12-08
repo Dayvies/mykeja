@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/signup.js') }}"></script>
+    </HEAD>
+    <BODY>
+        <H1>Welcome to MyKeja</H1>
+        <p>Please Signup</p>
+        <form id="signupform" >
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="name">
+                </br>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required placeholder = "email">
+                </br>
+                <label for="contact">contact</label>
+                <input type="text" id="contact" name="contact" placeholder="contact">
+                </br>
+                <label for="password">password</label>
+                <input type="text" id="password" name="password" placeholder="password" required>
+                </br>
+                <label for="cpassword">confirm password</label>
+                <input type="text" id="cpassword" name="cpassword" placeholder="cpassword" required>
+                </br>
+                <input type="submit" id="submitbtn" value="Submit" class="btn btn-primary">
+                
+        </form>
+        <h4 id="message">Welcome User, please fill all Fields. Green is Ok Red is not</h4>
+    </BODY>
+</HTML>

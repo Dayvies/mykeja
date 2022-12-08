@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/upload.js') }}"></script>
+</head>
+<body>
+        <div id="image_upload">
+	<h2>Select Images of your house to upload</h2>
+	<dl>
+		<p>
+			<p id="msg"></p>
+			<input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
+			<button id="upload">Upload</button>
+		</p>
+	</dl>
+        </div>
+</body>
+</HTML>

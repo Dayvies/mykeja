@@ -1,0 +1,121 @@
+
+body {
+        margin: 0;
+        padding: 0;
+}
+.main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+}
+
+.image{
+	width:28em;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+
+}
+.slider-outer{
+	width:97%;
+        margin-top: 5px;
+        height: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        display: flex;
+        
+}
+.slider-inner{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+        border-radius: 10px;
+        background-color: #9c5ad1;
+}
+.slider-inner img{
+	display:none;
+	width:100%;
+	height:100%;
+        overflow:hidden;
+        border-radius: 10px;
+}
+
+.slider-inner img.active{
+	display:inline-block;
+        background-color: grey;
+}
+.prev,.next{
+	float:left;
+	margin-top:25%;
+	cursor: pointer;
+        height:12%;
+        width:auto;
+        opacity:0%;
+}
+.slider-outer:hover .prev{
+	opacity: 70%;
+}
+.slider-outer:hover .next{
+	opacity: 70%;
+}
+
+.prev{
+	position:relative;
+	margin-right:-45px;
+        padding-right: 20px;
+	z-index:100;
+}
+
+.next{
+	position:relative;
+	margin-left:-45px;
+	z-index:100;
+        padding-left: 20px;
+}
+.information {
+        margin-left: 10px;
+        margin-right: auto;
+        text-align: justify;
+        display:flex;
+        flex-wrap: wrap;
+}
+.information  .heading{
+        width: 100%;
+
+}
+.information  .price{
+        margin-right: -5px;
+        margin-top: -5px;
+        color: rgb(255, 60, 0);
+}
+.description {
+        width: 100%;
+        margin-top: -5px;
+
+}
+.disp{
+        width: 50%;
+        margin-top: 10px;
+        border-radius: 5px;
+        min-width: 350px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+}
+.disp .img2{
+        width:30%;
+        min-width: 100px;
+}
+.break
+{
+        flex-basis: 100%;
+        height:0;
+}
+.infod
+{
+        display:inline-flex;
+}

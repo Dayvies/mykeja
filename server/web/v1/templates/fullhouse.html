@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/header.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/fullhouse.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/maps3.css') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/home.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/map3.js') }}"></script>
+        <link rel="icon" href="/static/images/logo.png" />
+    </HEAD>
+    <BODY>
+        <header>
+                <div class="logo">
+                </div><div class="search"></div>
+                <div class="options"><div class ="inf"><p>Sign in</p></div><div class="icons"><div class ="navbutton"></div><div class ="navuser"></div></div> </div>
+        </header>
+        <div class="nav">
+                
+                        <p class ="signin">Sign in</p><p>Login</p><p>About</p><p>Help</p>
+                
+        </div>
+        <div class ="information"><p class="heading">{{ house.name|e }}</p><p class="price">{{- house.price|e }}</p></div>
+        <div class="main">
+        <div class ="image" id="{{ house.id }}" data-latitude="{{ house.latitude }}" data-longitude="{{ house.longitude }}">
+                
+                <div class="slider-outer">
+                <img src="/static/images/arrow-left.png" class="prev" alt="Prev">
+                <div class="slider-inner">
+                {% for img in house.urls %}
+                <img src="{{ img|e}}" alt="alternatetext">
+                {% endfor %}              
+                </div>
+                <img src="/static/images/arrow-right.png" class="next" alt="Next">
+                </div>
+                <div class="infod"><p >{{- house.location|e }}</p><p >{{- house.description|e }}</p></div>   
+        </div>
+        <div class ="disp">
+                {% for img in house.urls %}
+                <img class="img2" src="{{ img|e}}" alt="alternatetext">
+                {% endfor %}
+                <div id ="mapdetails">
+                        <div id="map">THIS IS A MAP</div>
+                        <div id="infowindow-content">
+                          <span id="place-name" class="title"></span><br />
+                          <span id="place-address"></span>
+                        </div>
+                </div>
+        </div>
+       
+</div>
+               
+        </div>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key={{ gapi }}&callback=initMap&libraries=places&v=weekly"
+        defer
+      ></script>
+    </BODY>
+</HTML>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/reghouse.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/header.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/maps2.css') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/reghouse.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/map2.js') }}"></script>
+        <link rel="icon" href="/static/images/logo.png" />
+    </HEAD>
+    <BODY>
+        <header>
+                <div class="logo">
+                </div><div class="search"></div>
+                <div class="options"><div class ="inf"><p>Sign in</p></div><div class="icons"><div class ="navbutton"></div><div class ="navuser"></div></div> </div>
+        </header>
+        <div class="nav">
+                
+                        <p class ="signin">Sign in</p><p>Login</p><p>About</p><p>Help</p>
+                
+        </div>
+        <H1>Hello {{ name }}</H1>
+        <p>Register House</p>
+        <div id="reghouse">
+        <div class="formdetails">
+        <form id="houseform" >
+                <label for="name">Name</label>
+                </br>
+                <input type="text" id="name" name="name" required placeholder="name">
+                </br>
+                <label for="number_rooms">number of rooms</label>
+                </br>
+                <input type="number" id="number_rooms" name="number_rooms" placeholder="number of rooms" required>
+                </br>
+                <label for="price">Price KSH</label>
+                </br>
+                <input type="number" id="price" name="price" placeholder="price" required>
+                </br>
+                <label for="number_bathrooms">Bathrooms</label>
+                </br>
+                <input type="number" id="number_bathrooms" name="number_bathrooms" placeholder="number of bathrooms" required>
+                </br>
+                <label for="location">Location</label>
+                </br>
+                <input type="text" id="pac-input" name="location" >
+                </br>
+                <label for="latitude">Lattitude</label>
+                </br>
+                <input type="number" id="latitude" name="latitude" readonly>
+                </br>
+                <label for="longitude">Longitude</label>
+                </br>
+                <input type="number" id="longitude" name="longitude" readonly>
+                </br>
+                <label for="description">Description</label>
+                </br>
+                <textarea  id="description" name="description" rows="4" cols="50" placeholder="Enter Description not more than 300 words" required></textarea>
+                </br>
+                <input type="submit" id="submitbtn" value="Submit" class="btn btn-primary">
+                
+        </form>
+        </div>
+        <div id ="mapdetails">
+                <div id="map">THIS IS A MAP</div>
+                <div id="infowindow-content">
+                  <span id="place-name" class="title"></span><br />
+                  <span id="place-address"></span>
+                </div>
+        </div>
+        </div>
+        <h4 id="message">Welcome {{ name }}, please fill all Fields. Green is Ok Red is not</h4>
+        <div id="image_upload">
+                <h2>Select Images of your house to upload</h2>
+                <div class ="row"></div>
+                <dl>
+                        <p>
+                                <p id="msg"></p>
+                                <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
+                                <button id="upload">Upload</button>
+                        </p>
+                </dl>
+                </div>
+        <!-- 
+                         The `defer` attribute causes the callback to execute after the full HTML
+                         document has been parsed. For non-blocking uses, avoiding race conditions,
+                         and consistent behavior across browsers, consider loading using Promises
+                         with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+                        -->
+                        <script
+                          src="https://maps.googleapis.com/maps/api/js?key={{ gapi }}&callback=initMap&libraries=places&v=weekly"
+                          defer
+                        ></script>
+    </BODY>
+</HTML>

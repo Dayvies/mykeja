@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>MyKeja</TITLE>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/header.css') }}"></script>
+        <link  rel="stylesheet" href="{{ url_for('web_v1.static', filename='styles/home_body.css') }}"></script>
+        <script type="text/javascript" src="{{ url_for('web_v1.static', filename='scripts/home.js') }}"></script>
+        <link rel="icon" href="/static/images/logo.png" />
+    </HEAD>
+    <BODY>
+        <header>
+                <div class="logo">
+                </div><div class="search"></div>
+                <div class="options"><div class ="inf"><p>Sign in</p></div><div class="icons"><div class ="navbutton"></div><div class ="navuser"></div></div> </div>
+        </header>
+        <div class="nav">
+                
+                        <p class ="signin">Sign in</p><p>Login</p><p>About</p><p>Help</p>
+                
+        </div>
+        <section class="main">
+        </div> 
+        {% for item in houses %}
+        <div class ="image" id="{{ item.id }}">
+                
+                <div class="slider-outer">
+                <img src="/static/images/arrow-left.png" class="prev" alt="Prev">
+                <div class="slider-inner">
+                {% for img in item.urls %}
+                <img src="{{ img|e}}" alt="alternatetext">
+                {% endfor %}              
+                </div>
+                <img src="/static/images/arrow-right.png" class="next" alt="Next">
+                </div>
+                <div class ="information"><p class="heading">{{ item.name|e }}</p><p class="price">{{- item.price|e }}</p>
+                <p class="description">{{ item.description|e }}</p>
+        </div>
+        </div>
+        {% endfor %}
+        </section>
+
+    </BODY>
+</HTML>
