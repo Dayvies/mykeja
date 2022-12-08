@@ -3,8 +3,8 @@ $(document).ready(function () {
   $(".signin").on("click", function () {
     window.location.href = "/web/v1/login";
   });
-  $(".image").on("click", function () {
-        let id = $(this).attr('id');
+  $(".information").on("click", function () {
+        let id = $(this).parent().attr('id');
         console.log("tried");
         window.location.href = `/web/v1/home/${id}`;
       });
