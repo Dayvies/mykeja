@@ -3,6 +3,11 @@ $(document).ready(function () {
   $(".signin").on("click", function () {
     window.location.href = "/web/v1/login";
   });
+  $(".image").on("click", function () {
+        let id = $(this).attr('id');
+        console.log("tried");
+        window.location.href = `/web/v1/home/${id}`;
+      });
   $(".icons").on("click", function () {
     console.log("hey");
     $(".nav").toggle();
